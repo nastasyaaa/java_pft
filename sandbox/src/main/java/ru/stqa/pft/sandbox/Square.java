@@ -7,7 +7,7 @@ public class Square {
        this.l=len;
     }
 
-    public double area() {  //функция area, double len - переменная
+    public double area() {
         return this.l * this.l;
     }
 }
