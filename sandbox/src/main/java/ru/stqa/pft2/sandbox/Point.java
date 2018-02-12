@@ -10,7 +10,7 @@ public class Point {
 
     }
     public double distance(Point second) {
-        return Math.sqrt(Math.pow((this.x - this.x),2) + Math.pow((this.y - this.y),2));
+        return Math.sqrt(Math.pow((this.x - second.x),2) + Math.pow((this.y - second.y),2));
             }
 
      }
