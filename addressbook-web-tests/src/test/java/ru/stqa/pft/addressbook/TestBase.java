@@ -80,4 +80,34 @@ public class TestBase {
     protected void selectGroup() {
         wd.findElement(By.name("selected[]")).click();
     }
+
+    protected void returnToContactPage() {
+        wd.findElement(By.linkText("home")).click();
+    }
+
+    protected void submitContactCreation() {
+        wd.findElement(By.name("submit")).click();
+    }
+
+    protected void fillContactCreation(ContactDate contactDate) {
+        wd.findElement(By.name("firstname")).click();
+        wd.findElement(By.name("firstname")).clear();
+        wd.findElement(By.name("firstname")).sendKeys(contactDate.getFirstname());
+        wd.findElement(By.name("lastname")).click();
+        wd.findElement(By.name("lastname")).clear();
+        wd.findElement(By.name("lastname")).sendKeys(contactDate.getLastname());
+        wd.findElement(By.name("nickname")).click();
+        wd.findElement(By.name("nickname")).clear();
+        wd.findElement(By.name("nickname")).sendKeys(contactDate.getNickname());
+        wd.findElement(By.name("company")).click();
+        wd.findElement(By.name("company")).clear();
+        wd.findElement(By.name("company")).sendKeys(contactDate.getCompany());
+        wd.findElement(By.name("address")).click();
+        wd.findElement(By.name("address")).clear();
+        wd.findElement(By.name("address")).sendKeys(contactDate.getAddress());
+    }
+
+    protected void newContactCreation() {
+        wd.findElement(By.linkText("add new")).click();
+    }
 }
