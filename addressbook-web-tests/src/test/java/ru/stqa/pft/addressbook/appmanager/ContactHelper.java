@@ -24,12 +24,12 @@ public class ContactHelper extends HelperBase{
         type(By.name("company"), contactDate.getCompany());
         type(By.name("address"), contactDate.getAddress());
 
-        if (creation) {
+  /*      if (creation) {
             new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactDate.getGroup());
         } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
-
+*/
 
 
     }
