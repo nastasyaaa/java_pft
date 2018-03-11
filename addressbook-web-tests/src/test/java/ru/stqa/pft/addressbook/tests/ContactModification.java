@@ -6,6 +6,7 @@ import ru.stqa.pft.addressbook.model.ContactDate;
 public class ContactModification extends TestBase {
     @Test
     public void testContactModification() {
+        app.getContactHelper().returnToContactPage();
         if (!app.getContactHelper().isThisAContact()) {
             app.getContactHelper().creationContact(new ContactDate("Petrov", "Petr", "Petroff", "LKK", "RF", null), true);
         }

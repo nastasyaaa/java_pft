@@ -7,6 +7,7 @@ public class ContactDeletionTests extends TestBase{
 
     @Test
     public void testContactDeletion(){
+        app.getContactHelper().returnToContactPage();
        if (! app.getContactHelper().isThisAContact()){
           app.getContactHelper().creationContact(new ContactDate("Ivanov", "Ivan", "Ivancik", "LK", "Russia", "test1"), true);
     }
