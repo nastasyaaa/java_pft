@@ -4,13 +4,13 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.GroupDate;
 
-public class GroupModificationTests extends TestBase{
+public class GroupModificationTests extends TestBase {
 
     @Test
     public void testGroupModification() {
         app.getNavigationHelper().gotoGroupPage();
         int before = app.getGroupHelper().getGroupCount();
-        if (! app.getGroupHelper().isThereAGroup()){
+        if (!app.getGroupHelper().isThereAGroup()) {
             app.getGroupHelper().createGroup(new GroupDate("test1", null, null));
         }
         app.getGroupHelper().selectGroup(before - 1);
