@@ -3,7 +3,9 @@ package ru.stqa.pft.addressbook.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactDate;
+import ru.stqa.pft.addressbook.model.GroupDate;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class ContactModification extends TestBase {
@@ -21,5 +23,11 @@ public class ContactModification extends TestBase {
         app.getContactHelper().returnToContactPage();
         List<ContactDate> after = app.getContactHelper().getContactList();
         Assert.assertEquals(after.size(), before.size());
+
+        Comparator<ContactDate> contact = Comparator.comparing(ContactDate::getLastname);
+        before.sort(contact);
+        after.sort(contact);
+        Assert.assertEquals(before, after);
+
     }
 }
