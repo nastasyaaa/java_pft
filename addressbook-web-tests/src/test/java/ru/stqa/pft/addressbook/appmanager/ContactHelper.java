@@ -93,4 +93,13 @@ public class ContactHelper extends HelperBase {
         }
         return contacts;
     }
+
+    public void fillContactForm(ContactDate contactDate, boolean creation) {
+        type(By.name("firstname"), contactDate.getFirstname());
+        type(By.name("lastname"), contactDate.getLastname());
+        type(By.name("nickname"), contactDate.getNickname());
+        type(By.name("company"), contactDate.getCompany());
+        type(By.name("address"), contactDate.getAddress());
+
+    }
 }

@@ -16,17 +16,20 @@ public class ContactModification extends TestBase {
             app.getContactHelper().creationContact(new ContactDate("Petrov", "Petr", "Petroff", "LKK", "RF", null), true);
         }
         List<ContactDate> before = app.getContactHelper().getContactList();
-        app.getContactHelper().selectContact(before.size() - 1);
+        //app.getContactHelper().selectContact(before.size() - 1);
         app.getContactHelper().intContactModification();
-        app.getContactHelper().fillContactCreation(new ContactDate("Ivanov", "Ivan", "Ivancik", "LK", "Russia", null), false);
+        ContactDate contact = new ContactDate("Ivanov", "Ivan", "Ivancik", "LK", "Russia", null);
+        app.getContactHelper().fillContactForm(contact, false);
         app.getContactHelper().submitContactModification();
         app.getContactHelper().returnToContactPage();
+
         List<ContactDate> after = app.getContactHelper().getContactList();
+
         Assert.assertEquals(after.size(), before.size());
 
-        Comparator<ContactDate> contact = Comparator.comparing(ContactDate::getLastname);
-        before.sort(contact);
-        after.sort(contact);
+        Comparator<ContactDate> comparator = Comparator.comparing(ContactDate::getLastname);
+        before.sort(comparator);
+        after.sort(comparator);
         Assert.assertEquals(before, after);
 
     }
