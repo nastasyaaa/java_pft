@@ -6,7 +6,8 @@ public class GroupDate {
     private String header;
     private String footer;
 
-   public int getId() { return id; }
+
+    public int getId() { return id; }
 
     public GroupDate withId(int id) {
         this.id = id;
@@ -55,12 +56,15 @@ public class GroupDate {
 
         GroupDate groupDate = (GroupDate) o;
 
+        if (id != groupDate.id) return false;
         return name != null ? name.equals(groupDate.name) : groupDate.name == null;
     }
 
     @Override
     public int hashCode() {
-        return name != null ? name.hashCode() : 0;
+        int result = id;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        return result;
     }
 
 }
