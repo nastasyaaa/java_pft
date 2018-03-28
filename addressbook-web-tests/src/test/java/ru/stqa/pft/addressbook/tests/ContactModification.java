@@ -24,8 +24,10 @@ public class ContactModification extends TestBase {
         app.getContactHelper().returnToContactPage();
 
         List<ContactDate> after = app.getContactHelper().getContactList();
-
         Assert.assertEquals(after.size(), before.size());
+        before.remove(before.size()-1);
+        before.add(contact);
+
 
         Comparator<ContactDate> comparator = Comparator.comparing(ContactDate::getLastname);
         before.sort(comparator);
