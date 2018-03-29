@@ -1,21 +1,43 @@
 package ru.stqa.pft.addressbook.model;
 
 public class ContactDate {
-    private final String firstname;
-    private final String lastname;
-    private final String nickname;
-    private final String company;
-    private final String address;
+    private String firstname;
+    private String lastname;
+    private String nickname;
+    private String company;
+    private String address;
     private String group;
 
-    public ContactDate(String firstname, String lastname, String nickname, String company, String address, String group) {
+    public ContactDate withFirstname(String firstname) {
         this.firstname = firstname;
-        this.lastname = lastname;
-        this.nickname = nickname;
-        this.company = company;
-        this.address = address;
-        this.group = group;
+        return this;
     }
+
+    public ContactDate withLastname(String lastname) {
+        this.lastname = lastname;
+        return this;
+    }
+
+    public ContactDate withNickname(String nickname) {
+        this.nickname = nickname;
+        return this;
+    }
+
+    public ContactDate withCompany(String company) {
+        this.company = company;
+        return this;
+    }
+
+    public ContactDate withAddress(String address) {
+        this.address = address;
+        return this;
+    }
+
+    public ContactDate withGroup(String group) {
+        this.group = group;
+        return this;
+    }
+
 
     public String getFirstname() {
         return firstname;
