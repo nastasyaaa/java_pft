@@ -3,10 +3,7 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactDate;
-import ru.stqa.pft.addressbook.model.GroupDate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -101,5 +98,12 @@ public class ContactHelper extends HelperBase {
         type(By.name("company"), contactDate.getCompany());
         type(By.name("address"), contactDate.getAddress());
 
+    }
+
+    public void modifiContact(ContactDate contact) {
+        intContactModification();
+        fillContactForm(contact, false);
+        submitContactModification();
+        returnToContactPage();
     }
 }
