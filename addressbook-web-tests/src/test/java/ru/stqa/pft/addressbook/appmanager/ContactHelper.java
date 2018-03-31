@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.stqa.pft.addressbook.model.ContactDate;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.Groups;
 
 import java.util.HashSet;
 import java.util.List;
@@ -62,7 +63,9 @@ public class ContactHelper extends HelperBase {
         newContactCreation();
         fillContactCreation(contact, c);
         submitContactCreation();
+        contactCache = null;
         contactPage();
+
     }
 
     public boolean isThisAContact() {
@@ -73,16 +76,21 @@ public class ContactHelper extends HelperBase {
         return wd.findElements(By.name("selected[]")).size();
     }
 
+    private Contacts contactCache = null;
+
     public Contacts all() {
-        Contacts contacts = new Contacts();
+        if (contactCache != null){
+            return new Contacts(contactCache);
+        }
+        contactCache = new Contacts();
         List<WebElement> elements = wd.findElements(By.name("entry"));
         for (WebElement element : elements) {
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             String firstname = element.findElements(By.tagName("td")).get(2).getText();
             String lastname = element.findElements(By.tagName("td")).get(1).getText();
-            contacts.add(new ContactDate().withId(id).withFirstname(firstname).withLastname(lastname));
+            contactCache.add(new ContactDate().withId(id).withFirstname(firstname).withLastname(lastname));
         }
-        return contacts;
+        return new Contacts(contactCache);
     }
 
     public void fillContactForm(ContactDate contactDate, boolean creation) {
@@ -98,6 +106,7 @@ public class ContactHelper extends HelperBase {
         intContactModificationById(contact.getId());
         fillContactForm(contact, false);
         submitContactModification();
+        contactCache = null;
         contactPage();
     }
 
@@ -105,5 +114,6 @@ public class ContactHelper extends HelperBase {
         selectContactById(contact.getId());
         deleteContact();
         endDeleteContact();
+        contactCache = null;
     }
 }
