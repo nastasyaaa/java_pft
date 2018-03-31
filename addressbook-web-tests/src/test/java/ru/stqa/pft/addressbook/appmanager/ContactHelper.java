@@ -5,8 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.stqa.pft.addressbook.model.ContactDate;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ContactHelper extends HelperBase {
 
@@ -26,22 +27,14 @@ public class ContactHelper extends HelperBase {
         type(By.name("company"), contactDate.getCompany());
         type(By.name("address"), contactDate.getAddress());
 
-  /*      if (creation) {
-            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactDate.getGroup());
-        } else {
-            Assert.assertFalse(isElementPresent(By.name("new_group")));
-        }
-*/
-
-
     }
 
     public void newContactCreation() {
         click(By.linkText("add new"));
     }
 
-    public void selectContact(int index) {
-        wd.findElements(By.name("selected[]")).get(index).click();
+    public void selectContactById(int id) {
+        wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
     }
 
     public void deleteContact() {
@@ -79,13 +72,14 @@ public class ContactHelper extends HelperBase {
         return wd.findElements(By.name("selected[]")).size();
     }
 
-    public List<ContactDate> list() {
-        List<ContactDate> contacts = new ArrayList<ContactDate>();
+    public Set<ContactDate> all() {
+        Set<ContactDate> contacts = new HashSet<ContactDate>();
         List<WebElement> elements = wd.findElements(By.name("entry"));
         for (WebElement element : elements) {
+            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             String firstname = element.findElements(By.tagName("td")).get(2).getText();
             String lastname = element.findElements(By.tagName("td")).get(1).getText();
-            contacts.add(new ContactDate().withFirstname(firstname).withLastname(lastname));
+            contacts.add(new ContactDate().withId(id).withFirstname(firstname).withLastname(lastname));
         }
         return contacts;
     }
@@ -100,14 +94,15 @@ public class ContactHelper extends HelperBase {
     }
 
     public void modifi(ContactDate contact) {
+        selectContactById(contact.getId());
         intContactModification();
         fillContactForm(contact, false);
         submitContactModification();
         contactPage();
     }
 
-    public void delete(int index) {
-        selectContact(index);
+    public void delete(ContactDate contact) {
+        selectContactById(contact.getId());
         deleteContact();
         endDeleteContact();
     }

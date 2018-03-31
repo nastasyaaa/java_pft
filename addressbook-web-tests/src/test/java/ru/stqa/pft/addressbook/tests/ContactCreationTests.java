@@ -4,24 +4,21 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactDate;
 
-import java.util.Comparator;
-import java.util.List;
+import java.util.Set;
 
 public class ContactCreationTests extends TestBase {
 
     @Test
     public void testContactCreation() {
         app.contact().contactPage();
-        List<ContactDate> before = app.contact().list();
+        Set<ContactDate> before = app.contact().all();
         ContactDate contact = new ContactDate().withFirstname("Ivanov").withLastname("Ivan").withNickname("Ivancik").withCompany("LK").withAddress("RF");
         app.contact().create(contact, true);
-        List<ContactDate> after = app.contact().list();
+        Set<ContactDate> after = app.contact().all();
         Assert.assertEquals(after.size(), before.size() + 1);
 
+        contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt());
         before.add(contact);
-        Comparator<ContactDate> comparator = Comparator.comparing(ContactDate::getLastname);
-        before.sort(comparator);
-        after.sort(comparator);
         Assert.assertEquals(before, after);
     }
 
