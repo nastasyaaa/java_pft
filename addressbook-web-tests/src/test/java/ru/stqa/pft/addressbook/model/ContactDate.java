@@ -8,8 +8,9 @@ public class ContactDate {
     private String company;
     private String address;
     private String group;
-
-    public int getId() { return id; }
+    private String homePhone;
+    private String mobilePhone;
+    private String workPhone;
 
     public ContactDate withId(int id) {
         this.id = id;
@@ -46,14 +47,28 @@ public class ContactDate {
         return this;
     }
 
+    public ContactDate withHomePhone(String homePhone){
+        this.homePhone = homePhone;
+        return this;
+    }
+
+    public ContactDate withMobilePhone(String mobilePhone){
+        this.mobilePhone = mobilePhone;
+        return this;
+    }
+
+    public ContactDate withWorkPhone(String workPhone){
+        this.workPhone = workPhone;
+        return this;
+    }
+
+    public int getId() { return id; }
 
     public String getFirstname() {
         return firstname;
     }
 
-    public String getLastname() {
-        return lastname;
-    }
+    public String getLastname() { return lastname; }
 
     public String getNickname() {
         return nickname;
@@ -70,6 +85,12 @@ public class ContactDate {
     public String getGroup() {
         return group;
     }
+
+    public String getHomePhone() { return homePhone; }
+
+    public String getMobilePhone() { return mobilePhone; }
+
+    public String getWorkPhone() { return workPhone; }
 
     @Override
     public boolean equals(Object o) {
