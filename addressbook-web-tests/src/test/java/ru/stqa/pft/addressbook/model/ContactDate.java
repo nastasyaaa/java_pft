@@ -12,12 +12,32 @@ public class ContactDate {
     private String mobilePhone;
     private String workPhone;
     private String allPhones;
+    private String email;
+    private String email2;
+    private String email3;
+    private String allEmails;
 
-    public String getAllPhones() {
-        return allPhones;
+    public ContactDate withAllEmails(String allEmails) {
+        this.allEmails = allEmails;
+        return this;
     }
 
-    public ContactDate withAllPhones(String allPhones) {
+    public ContactDate withEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public ContactDate withEmail2(String email2) {
+        this.email2 = email2;
+        return this;
+    }
+
+    public ContactDate withEmail3(String email3) {
+        this.email3 = email3;
+        return this;
+    }
+
+     public ContactDate withAllPhones(String allPhones) {
         this.allPhones = allPhones;
         return this;
     }
@@ -101,6 +121,16 @@ public class ContactDate {
     public String getMobilePhone() { return mobilePhone; }
 
     public String getWorkPhone() { return workPhone; }
+
+    public String getAllPhones() { return allPhones; }
+
+    public String getEmail() { return email; }
+
+    public String getEmail2() { return email2; }
+
+    public String getEmail3() { return email3; }
+
+    public String getAllEmails() { return allEmails; }
 
     @Override
     public boolean equals(Object o) {
