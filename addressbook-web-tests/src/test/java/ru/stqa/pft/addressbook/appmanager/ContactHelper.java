@@ -28,7 +28,6 @@ public class ContactHelper extends HelperBase {
         type(By.name("nickname"), contactDate.getNickname());
         type(By.name("company"), contactDate.getCompany());
         type(By.name("address"), contactDate.getAddress());
-
     }
 
     public void newContactCreation() {
@@ -65,7 +64,29 @@ public class ContactHelper extends HelperBase {
         submitContactCreation();
         contactCache = null;
         contactPage();
+    }
 
+    public void fillContactForm(ContactDate contactDate, boolean creation) {
+        type(By.name("firstname"), contactDate.getFirstname());
+        type(By.name("lastname"), contactDate.getLastname());
+        type(By.name("nickname"), contactDate.getNickname());
+        type(By.name("company"), contactDate.getCompany());
+        type(By.name("address"), contactDate.getAddress());
+    }
+
+    public void modifi(ContactDate contact) {
+        intContactModificationById(contact.getId());
+        fillContactForm(contact, false);
+        submitContactModification();
+        contactCache = null;
+        contactPage();
+    }
+
+    public void delete(ContactDate contact) {
+        selectContactById(contact.getId());
+        deleteContact();
+        endDeleteContact();
+        contactCache = null;
     }
 
     public boolean isThisAContact() {
@@ -86,35 +107,14 @@ public class ContactHelper extends HelperBase {
         List<WebElement> elements = wd.findElements(By.name("entry"));
         for (WebElement element : elements) {
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-            String firstname = element.findElements(By.tagName("td")).get(2).getText();
             String lastname = element.findElements(By.tagName("td")).get(1).getText();
-            contactCache.add(new ContactDate().withId(id).withFirstname(firstname).withLastname(lastname));
+            String firstname = element.findElements(By.tagName("td")).get(2).getText();
+            String allPhones = element.findElements(By.tagName("td")).get(5).getText();
+
+            contactCache.add(new ContactDate().withId(id).withFirstname(firstname).withLastname(lastname)
+                    .withAllPhones(allPhones));
         }
         return new Contacts(contactCache);
-    }
-
-    public void fillContactForm(ContactDate contactDate, boolean creation) {
-        type(By.name("firstname"), contactDate.getFirstname());
-        type(By.name("lastname"), contactDate.getLastname());
-        type(By.name("nickname"), contactDate.getNickname());
-        type(By.name("company"), contactDate.getCompany());
-        type(By.name("address"), contactDate.getAddress());
-
-    }
-
-    public void modifi(ContactDate contact) {
-        intContactModificationById(contact.getId());
-        fillContactForm(contact, false);
-        submitContactModification();
-        contactCache = null;
-        contactPage();
-    }
-
-    public void delete(ContactDate contact) {
-        selectContactById(contact.getId());
-        deleteContact();
-        endDeleteContact();
-        contactCache = null;
     }
 
     public ContactDate infoFormEditForm(ContactDate contact) {
@@ -125,7 +125,12 @@ public class ContactHelper extends HelperBase {
     String mobile = wd.findElement(By.name("mobile")).getAttribute("value");
     String work = wd.findElement(By.name("work")).getAttribute("value");
     wd.navigate().back();
-    return new ContactDate().
-            withId(contact.getId()).withFirstname(firstname).withLastname(lastname).withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work);
+    return new ContactDate()
+            .withId(contact.getId())
+            .withFirstname(firstname)
+            .withLastname(lastname)
+            .withHomePhone(home)
+            .withMobilePhone(mobile)
+            .withWorkPhone(work);
     }
 }
