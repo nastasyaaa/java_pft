@@ -25,12 +25,14 @@ public class ContactHelper extends HelperBase {
     public void fillContactCreation(ContactDate contactDate, boolean creation) {
         type(By.name("firstname"), contactDate.getFirstname());
         type(By.name("lastname"), contactDate.getLastname());
+        attach(By.name("photo"), contactDate.getPhoto());
         type(By.name("nickname"), contactDate.getNickname());
         type(By.name("company"), contactDate.getCompany());
         type(By.name("address"), contactDate.getAddress());
         type(By.name("email"), contactDate.getEmail());
         type(By.name("email2"), contactDate.getEmail2());
         type(By.name("email3"), contactDate.getEmail3());
+
     }
 
     public void newContactCreation() {
