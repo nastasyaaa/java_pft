@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="787e0479-c93e-4788-8987-79854e226166" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/GroupCreationTests.java" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/GroupCreationTests.java" />
+      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/ContactCreationTests.java" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/ContactCreationTests.java" />
     </list>
     <ignored path="$PROJECT_DIR$/sandbox/.gradle/" />
     <ignored path="$PROJECT_DIR$/sandbox/build/" />
@@ -53,13 +53,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GroupCreationTests.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GroupCreationTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/GroupCreationTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="22" column="107" lean-forward="false" selection-start-line="22" selection-start-column="107" selection-end-line="22" selection-end-column="107" />
+            <state relative-caret-position="76">
+              <caret line="24" column="5" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="24" selection-end-column="5" />
               <folding>
                 <element signature="e#541#551#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContactCreationTests.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/ContactCreationTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+              <folding>
+                <element signature="e#617#627#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -679,16 +691,16 @@
         <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/ContactEmailTests.java" />
         <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/model/ContactDate.java" />
         <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/TestBase.java" />
-        <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/ContactCreationTests.java" />
         <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/HelperBase.java" />
         <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/ContactHelper.java" />
         <option value="$PROJECT_DIR$/addressbook-web-tests/build.gradle" />
         <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/generators/GroupDataGanarator.java" />
         <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/GroupCreationTests.java" />
+        <option value="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/ContactCreationTests.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="683" />
     <option name="width" value="683" />
     <option name="height" value="728" />
@@ -819,7 +831,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.GroupCreationTests.testGroupCreation">
+  <component name="RunManager" selected="TestNG.ContactCreationTests.testContactCreation">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -1057,10 +1069,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.GroupCreationTests.testGroupCreation" />
-        <item index="1" class="java.lang.String" itemvalue="Application.GroupDataGanarator" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.ru.stqa.pft.addressbook.tests" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.ContactCreationTests.testContactCreation" />
+        <item index="0" class="java.lang.String" itemvalue="TestNG.ContactCreationTests.testContactCreation" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.ru.stqa.pft.addressbook.tests" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.GroupCreationTests.testGroupCreation" />
+        <item index="3" class="java.lang.String" itemvalue="Application.GroupDataGanarator" />
         <item index="4" class="java.lang.String" itemvalue="TestNG.ContactCreationTests" />
       </list>
     </recent_temporary>
@@ -1088,12 +1100,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ContactCreationTests - 2018.04.05 at 19h 58m 24s.xml">
-      <configuration name="ContactCreationTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="ContactCreationTests - 2018.04.05 at 19h 59m 20s.xml">
-      <configuration name="ContactCreationTests" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="ContactCreationTests_testContactCreation - 2018.04.05 at 20h 00m 06s.xml">
       <configuration name="ContactCreationTests.testContactCreation" configurationId="TestNG" />
     </history-entry>
@@ -1101,6 +1107,9 @@
       <configuration name="ContactCreationTests.testContactCreation" configurationId="TestNG" />
     </history-entry>
     <history-entry file="ContactCreationTests_testContactCreation - 2018.04.05 at 20h 07m 57s.xml">
+      <configuration name="ContactCreationTests.testContactCreation" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="ContactCreationTests_testContactCreation - 2018.04.07 at 13h 43m 53s.xml">
       <configuration name="ContactCreationTests.testContactCreation" configurationId="TestNG" />
     </history-entry>
     <history-entry file="GroupCreationTests_testGroupCreation - 2018.04.07 at 13h 11m 33s.xml">
@@ -1118,10 +1127,12 @@
     <history-entry file="ru_stqa_pft_addressbook_tests - 2018.04.05 at 20h 11m 02s.xml">
       <configuration name="ru.stqa.pft.addressbook.tests" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="ru_stqa_pft_addressbook_tests - 2018.04.07 at 13h 35m 53s.xml">
+      <configuration name="ru.stqa.pft.addressbook.tests" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1132,7 +1143,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.33282906" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36437908" sideWeight="0.66717094" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30392158" sideWeight="0.66717094" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1584,14 +1595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/ContactCreationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/appmanager/HelperBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1644,10 +1647,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/GroupCreationTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="22" column="107" lean-forward="false" selection-start-line="22" selection-start-column="107" selection-end-line="22" selection-end-column="107" />
+        <state relative-caret-position="76">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="24" selection-end-column="5" />
           <folding>
             <element signature="e#541#551#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/stqa/pft/addressbook/tests/ContactCreationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding>
+            <element signature="e#617#627#0" expanded="true" />
           </folding>
         </state>
       </provider>
