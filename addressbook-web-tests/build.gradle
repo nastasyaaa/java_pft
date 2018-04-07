@@ -11,4 +11,5 @@ dependencies {
     compile 'it.ozimov:hamcrest:2.0.0'
     compile 'com.google.guava:guava-parent:24.1-jre'
     compile 'com.beust:jcommander:1.72'
+    compile 'com.thoughtworks.xstream:xstream:1.4.10'
 }

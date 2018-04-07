@@ -21,6 +21,9 @@ public class ContactDataGanarator {
     @Parameter(names = "-f", description = "Target file")
     public String file;
 
+    @Parameter(names = "-d", description = "Data format")
+    public String format;
+
     public static void main(String[] args) throws IOException {
         ContactDataGanarator ganarator = new ContactDataGanarator();
         JCommander jCommander = new JCommander(ganarator);
