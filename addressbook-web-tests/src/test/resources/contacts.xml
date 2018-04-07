@@ -1,0 +1,22 @@
+<list>
+  <contact>
+    <firstname>Ivanov 0</firstname>
+    <lastname>Ivan 0</lastname>
+  </contact>
+  <contact>
+    <firstname>Ivanov 1</firstname>
+    <lastname>Ivan 1</lastname>
+  </contact>
+  <contact>
+    <firstname>Ivanov 2</firstname>
+    <lastname>Ivan 2</lastname>
+  </contact>
+  <contact>
+    <firstname>Ivanov 3</firstname>
+    <lastname>Ivan 3</lastname>
+  </contact>
+  <contact>
+    <firstname>Ivanov 4</firstname>
+    <lastname>Ivan 4</lastname>
+  </contact>
+</list>
