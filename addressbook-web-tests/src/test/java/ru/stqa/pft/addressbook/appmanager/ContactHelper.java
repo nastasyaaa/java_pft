@@ -25,7 +25,7 @@ public class ContactHelper extends HelperBase {
     public void fillContactCreation(ContactDate contactDate, boolean creation) {
         type(By.name("firstname"), contactDate.getFirstname());
         type(By.name("lastname"), contactDate.getLastname());
-        attach(By.name("photo"), contactDate.getPhoto());
+       // attach(By.name("photo"), contactDate.getPhoto());
         type(By.name("nickname"), contactDate.getNickname());
         type(By.name("company"), contactDate.getCompany());
         type(By.name("address"), contactDate.getAddress());

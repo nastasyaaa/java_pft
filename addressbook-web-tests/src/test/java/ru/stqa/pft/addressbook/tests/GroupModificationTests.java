@@ -4,32 +4,30 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.GroupDate;
 import ru.stqa.pft.addressbook.model.Groups;
-
-
-
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
-import static org.testng.Assert.*;
+
 
 public class GroupModificationTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions(){
-        app.goTo().groupPage();
-        if (app.group().all().size() == 0) {
+        if (app.db().groups().size() == 0){
+            app.goTo().groupPage();
             app.group().create(new GroupDate().withName("test1"));
         }
     }
 
     @Test
     public void testGroupModification() {
-        Groups before = app.group().all();
+        Groups before = app.db().groups();
         GroupDate modifideGroup = before.iterator().next();
         GroupDate group = new GroupDate()
                 .withId(modifideGroup.getId()).withName("test1").withHeader("test2").withFooter("test3");
+        app.goTo().groupPage();
         app.group().modify(group);
         assertThat(app.group().count(), equalTo(before.size()));
-        Groups after = app.group().all();
+        Groups after = app.db().groups();
         assertThat(after, equalTo(before.without(modifideGroup).withAdded(group)));
     }
 

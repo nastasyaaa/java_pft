@@ -34,6 +34,27 @@ public class GroupDate {
     @Type(type = "text")
     private String footer;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        GroupDate groupDate = (GroupDate) o;
+
+        if (id != groupDate.id) return false;
+        if (name != null ? !name.equals(groupDate.name) : groupDate.name != null) return false;
+        if (header != null ? !header.equals(groupDate.header) : groupDate.header != null) return false;
+        return footer != null ? footer.equals(groupDate.footer) : groupDate.footer == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (header != null ? header.hashCode() : 0);
+        result = 31 * result + (footer != null ? footer.hashCode() : 0);
+        return result;
+    }
 
     public int getId() { return id; }
 
@@ -75,24 +96,6 @@ public class GroupDate {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        GroupDate groupDate = (GroupDate) o;
-
-        if (id != groupDate.id) return false;
-        return name != null ? name.equals(groupDate.name) : groupDate.name == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        return result;
     }
 
 }
