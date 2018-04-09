@@ -55,7 +55,8 @@ public class ContactDataGanarator {
             System.out.println(new File(".").getAbsolutePath());
             try (Writer writer = new FileWriter(file)){
                 for (ContactDate contact : contacts) {
-                    writer.write(String.format("%s;%s;%s\n", contact.getFirstname(), contact.getLastname()));
+                    writer.write(String.format("%s;%s;%s\n",
+                            contact.getFirstname(), contact.getLastname(), contact.getAddress()));
             }
             }
 
@@ -75,7 +76,7 @@ public class ContactDataGanarator {
         List<ContactDate> contacts = new ArrayList<ContactDate>();
         for (int i = 0; i < count; i++) {
             contacts.add(new ContactDate().withFirstname(String.format("Ivanov %s", i))
-                    .withLastname(String.format("Ivan %s", i)));
+                    .withLastname(String.format("Ivan %s", i)).withAddress(String.format("RF Samara %s", i)));
         }
         return contacts;
     }
