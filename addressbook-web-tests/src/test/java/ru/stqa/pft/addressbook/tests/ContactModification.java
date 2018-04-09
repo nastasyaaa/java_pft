@@ -20,7 +20,17 @@ public class ContactModification extends TestBase {
         app.contact().contactPage();
         if (app.contact().all().size() == 0) {
             app.contact().create(new ContactDate()
-                    .withFirstname("Petrov").withLastname("Petr").withNickname("Petroff").withCompany("LKK").withAddress("RF"), true);
+                    .withFirstname("Petrov")
+                    .withLastname("Petr")
+                    .withNickname("Petroff")
+                    .withCompany("LKK")
+                    .withAddress("RF")
+                    .withEmail("test@test.ru")
+                    .withEmail2("test@test1.ru")
+                    .withEmail3("test@test2.ru")
+                    .withHomePhone("8978220033")
+                    .withMobilePhone("8978220033")
+                    .withWorkPhone("8978220033"), true);
         }
     }
 
@@ -29,7 +39,18 @@ public class ContactModification extends TestBase {
         Contacts before = app.contact().all();
         ContactDate modifideContact = before.iterator().next();
         ContactDate contact = new ContactDate().
-                withId(modifideContact.getId()).withFirstname("Ivanov").withLastname("Ivan").withNickname("Ivancik").withCompany("LK").withAddress("RF");
+                withId(modifideContact.getId())
+                .withFirstname("Ivanov")
+                .withLastname("Ivan")
+                .withNickname("Ivancik")
+                .withCompany("LK")
+                .withAddress("RF")
+                .withEmail("test@test.ru")
+                .withEmail2("test@test1.ru")
+                .withEmail3("test@test11.ru")
+                .withWorkPhone("999633")
+                .withMobilePhone("236523")
+                .withHomePhone("457878");
         app.contact().modifi(contact);
         assertThat(app.contact().count(), equalTo(before.size()));
         Contacts after = app.contact().all();

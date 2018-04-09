@@ -116,9 +116,7 @@ public class ContactDate {
 
     public String getLastname() { return lastname; }
 
-    public String getNickname() {
-        return nickname;
-    }
+    public String getNickname() { return nickname; }
 
     public String getCompany() {
         return company;

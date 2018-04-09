@@ -2,11 +2,14 @@
   <contact>
     <firstname>Ivanov 0</firstname>
     <lastname>Ivan 0</lastname>
+    <nickname>Iv 0</nickname>
+    <company>LK 0</company>
     <address>RF Samara 0</address>
-  </contact>
-  <contact>
-    <firstname>Ivanov 1</firstname>
-    <lastname>Ivan 1</lastname>
-    <address>RF Samara 1</address>
+    <homePhone>89178112230</homePhone>
+    <mobilePhone>89178112250</mobilePhone>
+    <workPhone>89178112240</workPhone>
+    <email>test@test.ru</email>
+    <email2>test@test2.ru</email2>
+    <email3>test@test3.ru</email3>
   </contact>
 </list>

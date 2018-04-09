@@ -55,8 +55,18 @@ public class ContactDataGanarator {
             System.out.println(new File(".").getAbsolutePath());
             try (Writer writer = new FileWriter(file)){
                 for (ContactDate contact : contacts) {
-                    writer.write(String.format("%s;%s;%s\n",
-                            contact.getFirstname(), contact.getLastname(), contact.getAddress()));
+                    writer.write(String.format("%s;%s;%s;%s\n",
+                            contact.getFirstname(),
+                            contact.getLastname(),
+                            contact.getAddress(),
+                            contact.getNickname(),
+                            contact.getEmail(),
+                            contact.getEmail2(),
+                            contact.getEmail3(),
+                            contact.getCompany(),
+                            contact.getHomePhone(),
+                            contact.getWorkPhone(),
+                            contact.getMobilePhone()));
             }
             }
 
@@ -75,8 +85,19 @@ public class ContactDataGanarator {
     private List<ContactDate> generateContacts(int count) {
         List<ContactDate> contacts = new ArrayList<ContactDate>();
         for (int i = 0; i < count; i++) {
-            contacts.add(new ContactDate().withFirstname(String.format("Ivanov %s", i))
-                    .withLastname(String.format("Ivan %s", i)).withAddress(String.format("RF Samara %s", i)));
+            contacts.add(new ContactDate()
+                    .withFirstname(String.format("Ivanov %s", i))
+                    .withLastname(String.format("Ivan %s", i))
+                    .withAddress(String.format("RF Samara %s", i))
+                    .withNickname(String.format("Iv %s", i))
+                    .withEmail(String.format("test@test.ru", i))
+                    .withEmail2(String.format("test@test2.ru", i))
+                    .withEmail3(String.format("test@test3.ru", i))
+                    .withCompany(String.format("LK %s", i))
+                    .withHomePhone(String.format("8917811223%s", i))
+                    .withWorkPhone(String.format("8917811224%s", i))
+                    .withMobilePhone(String.format("8917811225%s", i)));
+
         }
         return contacts;
     }
