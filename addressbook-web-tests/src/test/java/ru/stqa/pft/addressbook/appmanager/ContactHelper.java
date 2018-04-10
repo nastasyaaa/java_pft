@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.stqa.pft.addressbook.model.ContactDate;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.GroupDate;
 import ru.stqa.pft.addressbook.model.Groups;
 
 import java.util.HashSet;
@@ -169,4 +170,30 @@ public class ContactHelper extends HelperBase {
         click(By.cssSelector("input[name='add']"));
 
     }
-}
+
+    public void remove(ContactDate contact, GroupDate group) {
+        selectRemoveContactById(contact.getId());
+        goToContactsFromGroupsPage(group.getId());
+        selectContactById(contact.getId());
+        submitContactRemoveFromGroup();
+        contactPage();
+        contactCache = null;
+
+    }
+
+    private void selectRemoveContactById(int id) {
+        wd.findElement(By.cssSelector(String.format("a[href='view.php?id=%s']", id))).click();
+    }
+
+    private void submitContactRemoveFromGroup() {
+        click(By.cssSelector("input[name='remove']"));
+    }
+
+    private void goToContactsFromGroupsPage(int group) {
+        click(By.xpath("//div/div[4]/i/a"));
+        //wd.findElement(By.cssSelector(String.format("a[href='./index.php?group=%s']", group))).click();
+    }
+
+
+    }
+
