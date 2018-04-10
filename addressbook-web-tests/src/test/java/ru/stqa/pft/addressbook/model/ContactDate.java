@@ -2,10 +2,14 @@ package ru.stqa.pft.addressbook.model;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import net.bytebuddy.agent.builder.AgentBuilder;
+import org.hibernate.annotations.ManyToAny;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.File;
+import java.util.HashSet;
+import java.util.Set;
 
 @XStreamAlias("contact")
 @Entity
@@ -32,9 +36,6 @@ public class ContactDate {
     @Column(name = "address")
     @Type(type = "text")
     private String address;
-
-    @Transient
-    private String group;
 
     @Column(name = "home")
     @Type(type = "text")
@@ -69,6 +70,12 @@ public class ContactDate {
     @Column(name = "photo")
     @Type(type = "text")
     private String photo;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "address_in_groups",
+            joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "group_id"))
+    private Set<GroupDate> groups = new HashSet<GroupDate>();
+
 
     @Override
     public boolean equals(Object o) {
@@ -183,7 +190,7 @@ public class ContactDate {
         return address;
     }
 
-    public String getGroup() { return group; }
+    public Groups getGroups() { return new Groups(groups); }
 
     public String getHomePhone() { return homePhone; }
 
