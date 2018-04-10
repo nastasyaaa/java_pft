@@ -157,4 +157,16 @@ public class ContactHelper extends HelperBase {
             .withEmail2(email2)
             .withEmail3(email3);
     }
+
+    public void add(ContactDate addContact) {
+        selectContactById(addContact.getId());
+        submitContactAddInGroup();
+        contactPage();
+        contactCache = null;
+    }
+
+    private void submitContactAddInGroup() {
+        click(By.cssSelector("input[name='add']"));
+
+    }
 }
