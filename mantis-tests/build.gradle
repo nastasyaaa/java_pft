@@ -10,6 +10,7 @@ dependencies {
     compile 'org.seleniumhq.selenium:selenium-java:3.11.0'
     compile 'it.ozimov:hamcrest:2.0.0'
     compile 'commons-net:commons-net:3.6'
+    compile 'org.subethamail:subethasmtp:3.1.7'
 
 }
 
