@@ -1,0 +1,167 @@
+Microsoft Windows [Version 6.3.9600]
+(c) Корпорация Майкрософт (Microsoft Corporation), 2013. Все права защищены.
+
+c:\tools>java -jar jenkins.war
+Running from: C:\tools\jenkins.war
+webroot: $user.home/.jenkins
+←[33mряЁ 13, 2018 9:12:04 AM Main deleteWinstoneTempContents
+WARNING: Failed to delete the temporary Winstone file C:\Users\08DE~1\AppData\Lo
+cal\Temp\winstone\jenkins.war
+←[0mряЁ 13, 2018 9:12:05 AM org.eclipse.jetty.util.log.Log initialized
+INFO: Logging initialized @514ms to org.eclipse.jetty.util.log.JavaUtilLog
+ряЁ 13, 2018 9:12:05 AM winstone.Logger logInternal
+INFO: Beginning extraction from war file
+←[33mряЁ 13, 2018 9:12:10 AM org.eclipse.jetty.server.handler.ContextHandler set
+ContextPath
+WARNING: Empty contextPath
+←[0mряЁ 13, 2018 9:12:10 AM org.eclipse.jetty.server.Server doStart
+INFO: jetty-9.4.z-SNAPSHOT
+ряЁ 13, 2018 9:12:12 AM org.eclipse.jetty.webapp.StandardDescriptorProcessor vis
+itServlet
+INFO: NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
+ряЁ 13, 2018 9:12:12 AM org.eclipse.jetty.server.session.DefaultSessionIdManager
+ doStart
+INFO: DefaultSessionIdManager workerName=node0
+ряЁ 13, 2018 9:12:12 AM org.eclipse.jetty.server.session.DefaultSessionIdManager
+ doStart
+INFO: No SessionScavenger set, using defaults
+ряЁ 13, 2018 9:12:12 AM org.eclipse.jetty.server.session.HouseKeeper startScaven
+ging
+INFO: Scavenging every 660000ms
+Jenkins home directory: C:\Users\Анастасия\.jenkins found at: $user.home/.jenkin
+s
+ряЁ 13, 2018 9:12:12 AM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started w.@6b5176f2{/,file:///C:/Users/%D0%90%D0%BD%D0%B0%D1%81%D1%82%D0%B
+0%D1%81%D0%B8%D1%8F/.jenkins/war/,AVAILABLE}{C:\Users\└эрёЄрёш \.jenkins\war}
+ряЁ 13, 2018 9:12:12 AM org.eclipse.jetty.server.AbstractConnector doStop
+INFO: Stopped ServerConnector@1922e6d{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+ряЁ 13, 2018 9:12:12 AM org.eclipse.jetty.server.session.HouseKeeper stopScaveng
+ing
+INFO: Stopped scavenging
+ряЁ 13, 2018 9:12:12 AM hudson.WebAppMain contextDestroyed
+INFO: Shutting down a Jenkins instance that was still starting up
+java.lang.Throwable: reason
+        at hudson.WebAppMain.contextDestroyed(WebAppMain.java:388)
+        at org.eclipse.jetty.server.handler.ContextHandler.callContextDestroyed(
+ContextHandler.java:898)
+        at org.eclipse.jetty.servlet.ServletContextHandler.callContextDestroyed(
+ServletContextHandler.java:545)
+        at org.eclipse.jetty.server.handler.ContextHandler.stopContext(ContextHa
+ndler.java:873)
+        at org.eclipse.jetty.servlet.ServletContextHandler.stopContext(ServletCo
+ntextHandler.java:355)
+        at org.eclipse.jetty.webapp.WebAppContext.stopWebapp(WebAppContext.java:
+1507)
+        at org.eclipse.jetty.webapp.WebAppContext.stopContext(WebAppContext.java
+:1471)
+        at org.eclipse.jetty.server.handler.ContextHandler.doStop(ContextHandler
+.java:927)
+        at org.eclipse.jetty.servlet.ServletContextHandler.doStop(ServletContext
+Handler.java:271)
+        at org.eclipse.jetty.webapp.WebAppContext.doStop(WebAppContext.java:569)
+
+        at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeC
+ycle.java:89)
+        at org.eclipse.jetty.util.component.ContainerLifeCycle.stop(ContainerLif
+eCycle.java:142)
+        at org.eclipse.jetty.util.component.ContainerLifeCycle.doStop(ContainerL
+ifeCycle.java:160)
+        at org.eclipse.jetty.server.handler.AbstractHandler.doStop(AbstractHandl
+er.java:124)
+        at org.eclipse.jetty.server.Server.doStop(Server.java:523)
+        at org.eclipse.jetty.util.component.AbstractLifeCycle.stop(AbstractLifeC
+ycle.java:89)
+        at winstone.Launcher.shutdown(Launcher.java:307)
+        at winstone.Launcher.<init>(Launcher.java:167)
+        at winstone.Launcher.main(Launcher.java:354)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.
+java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAcces
+sorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at Main._main(Main.java:312)
+        at Main.main(Main.java:136)
+
+Exception in thread "Jenkins initialization thread" ряЁ 13, 2018 9:12:12 AM org.
+eclipse.jetty.server.handler.ContextHandler doStop
+INFO: Stopped w.@6b5176f2{/,null,UNAVAILABLE}{C:\Users\└эрёЄрёш \.jenkins\war}
+java.lang.NoClassDefFoundError: hudson/util/HudsonFailedToLoad
+        at hudson.WebAppMain$3.run(WebAppMain.java:247)
+Caused by: java.lang.ClassNotFoundException: hudson.util.HudsonFailedToLoad
+        at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+        at org.eclipse.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoade
+r.java:560)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+        ... 1 more
+ряЁ 13, 2018 9:12:12 AM winstone.Logger logInternal
+INFO: Winstone shutdown successfully
+java.io.IOException: Failed to start Jetty
+        at winstone.Launcher.<init>(Launcher.java:156)
+        at winstone.Launcher.main(Launcher.java:354)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.
+java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAcces
+sorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at Main._main(Main.java:312)
+        at Main.main(Main.java:136)
+Caused by: java.net.BindException: Address already in use: bind
+        at sun.nio.ch.Net.bind0(Native Method)
+        at sun.nio.ch.Net.bind(Net.java:433)
+        at sun.nio.ch.Net.bind(Net.java:425)
+        at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:
+223)
+        at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+        at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:29
+8)
+        at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNet
+workConnector.java:80)
+        at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java
+:236)
+        at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLife
+Cycle.java:68)
+        at org.eclipse.jetty.server.Server.doStart(Server.java:431)
+        at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLife
+Cycle.java:68)
+        at winstone.Launcher.<init>(Launcher.java:154)
+        ... 7 more
+←[31mряЁ 13, 2018 9:12:12 AM winstone.Logger logInternal
+SEVERE: Container startup failed
+java.io.IOException: Failed to start Jetty
+        at winstone.Launcher.<init>(Launcher.java:156)
+        at winstone.Launcher.main(Launcher.java:354)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.
+java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAcces
+sorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at Main._main(Main.java:312)
+        at Main.main(Main.java:136)
+Caused by: java.net.BindException: Address already in use: bind
+        at sun.nio.ch.Net.bind0(Native Method)
+        at sun.nio.ch.Net.bind(Net.java:433)
+        at sun.nio.ch.Net.bind(Net.java:425)
+        at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:
+223)
+        at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+        at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:29
+8)
+        at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNet
+workConnector.java:80)
+        at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java
+:236)
+        at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLife
+Cycle.java:68)
+        at org.eclipse.jetty.server.Server.doStart(Server.java:431)
+        at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLife
+Cycle.java:68)
+        at winstone.Launcher.<init>(Launcher.java:154)
+        ... 7 more
+
+←[0m
+c:\tools>
