@@ -1,0 +1,34 @@
+Started by user Smirnova Anastasiya
+Building in workspace c:\jenkins_home\workspace\addressbook-tests
+ > c:\Program Files\Git\bin\git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > c:\Program Files\Git\bin\git.exe config remote.origin.url https://github.com/nastasyaaa/java_pft # timeout=10
+Fetching upstream changes from https://github.com/nastasyaaa/java_pft
+ > c:\Program Files\Git\bin\git.exe --version # timeout=10
+ > c:\Program Files\Git\bin\git.exe fetch --tags --progress https://github.com/nastasyaaa/java_pft +refs/heads/*:refs/remotes/origin/*
+ > c:\Program Files\Git\bin\git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > c:\Program Files\Git\bin\git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision ffa008e8dd03775102aec1093a3dbf6acd6e4ed6 (refs/remotes/origin/master)
+ > c:\Program Files\Git\bin\git.exe config core.sparsecheckout # timeout=10
+ > c:\Program Files\Git\bin\git.exe checkout -f ffa008e8dd03775102aec1093a3dbf6acd6e4ed6
+Commit message: "Create jenkins3"
+ > c:\Program Files\Git\bin\git.exe rev-list --no-walk ffa008e8dd03775102aec1093a3dbf6acd6e4ed6 # timeout=10
+[Gradle] - Launching build.
+[addressbook-web-tests] $ cmd.exe /C "c:\tools\gradle-4.5\bin\gradle.bat clean test && exit %%ERRORLEVEL%%"
+:clean
+:compileJava NO-SOURCE
+:processResources NO-SOURCE
+:classes UP-TO-DATE
+:compileTestJavaNote: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+:processTestResources
+:testClasses
+:test
+
+BUILD SUCCESSFUL in 2s
+4 actionable tasks: 4 executed
+Build step 'Invoke Gradle script' changed build result to SUCCESS
+Recording test results
+ERROR: Step ‘Publish JUnit test result report’ failed: No test report files were found. Configuration error?
+Finished: FAILURE
