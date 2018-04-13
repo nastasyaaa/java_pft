@@ -1,0 +1,42 @@
+Started by user Smirnova Anastasiya
+Building in workspace c:\jenkins_home\workspace\sandbox
+ > c:\Program Files\Git\bin\git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > c:\Program Files\Git\bin\git.exe config remote.origin.url https://github.com/nastasyaaa/java_pft # timeout=10
+Fetching upstream changes from https://github.com/nastasyaaa/java_pft
+ > c:\Program Files\Git\bin\git.exe --version # timeout=10
+ > c:\Program Files\Git\bin\git.exe fetch --tags --progress https://github.com/nastasyaaa/java_pft +refs/heads/*:refs/remotes/origin/*
+ > c:\Program Files\Git\bin\git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > c:\Program Files\Git\bin\git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision 4f1947bd6671e4f936ffe988fcfe74be8669ed35 (refs/remotes/origin/master)
+ > c:\Program Files\Git\bin\git.exe config core.sparsecheckout # timeout=10
+ > c:\Program Files\Git\bin\git.exe checkout -f 4f1947bd6671e4f936ffe988fcfe74be8669ed35
+Commit message: "add"
+ > c:\Program Files\Git\bin\git.exe rev-list --no-walk 4f1947bd6671e4f936ffe988fcfe74be8669ed35 # timeout=10
+[Gradle] - Launching build.
+[sandbox] $ cmd.exe /C "c:\tools\gradle-4.5\bin\gradle.bat clean test && exit %%ERRORLEVEL%%"
+:clean
+:compileJavaC:\jenkins_home\workspace\sandbox\sandbox\src\main\java\ru\stqa\pft\sandbox\firstprog.java:3: error: class Firstprog is public, should be declared in a file named Firstprog.java
+public class Firstprog {
+       ^
+1 error
+ FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 1s
+2 actionable tasks: 2 executed
+Build step 'Invoke Gradle script' changed build result to FAILURE
+Build step 'Invoke Gradle script' marked build as failure
+Recording test results
+ERROR: Step ‘Publish JUnit test result report’ failed: No test report files were found. Configuration error?
+Finished: FAILURE
