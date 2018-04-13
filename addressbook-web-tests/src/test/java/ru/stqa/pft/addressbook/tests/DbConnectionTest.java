@@ -13,7 +13,7 @@ public class DbConnectionTest {
         Connection conn = null;
 
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/addressbook?user=root&password=");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/addressbook?serverTimezone=UTC?user=root&password=");
 
 
             Statement st = conn.createStatement();
